@@ -19,7 +19,7 @@ public class FieldText implements Fields {
     /**
      * Constructor complete
      *
-     * @param field field name
+     * @param field field name 
      * @param length number of characters lenght
      */
     public FieldText(String field, int length) {
