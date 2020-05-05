@@ -11,7 +11,7 @@ import base.Entity;
  *
  * @author wolfi
  */
-public class Clientes extends Entity {
+public class Clientes extends Entity{
 
     public Entity entidade = new Entity("clientes", "Clientes");
 
