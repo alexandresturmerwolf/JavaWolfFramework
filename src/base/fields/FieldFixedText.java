@@ -7,38 +7,28 @@ Utility____:
  */
 package base.fields;
 
-import static base.fields.Fields.FieldType.FIELD_TEXT;
+import base.Entity;
 
-public class FieldText implements Fields {
+public class FieldFixedText implements Fields {
 
-    private final FieldType TYPE = FIELD_TEXT;
+    private final Fields.FieldType TYPE = Fields.FieldType.FIELD_FIXED_TEXT;
 
     private String field = null;
     private String alias = null;
-    private int length = 0;
+    private String values[] = null;
 
     /**
      * Constructor complete
      *
-     * @param field field name
-     * @param alias name to show to end user
-     * @param length number of characters lenght
+     * @param field filedname
+     * @param alias nome to show end user
+     * @param values array with fixed data
      */
-    public FieldText(String field, String alias, int length) {
+    public FieldFixedText(String field, String alias, String values[]) {
         this.field = field;
         this.alias = alias;
-        this.length = length;
-    }
+        this.values = values;
 
-    /**
-     * Constructor base
-     *
-     * @param field field name, in this option the field type is text
-     * @param alias name to show to end user
-     */
-    public FieldText(String field, String alias) {
-        this.field = field;
-        this.alias = alias;
     }
 
     /**

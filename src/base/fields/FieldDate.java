@@ -7,36 +7,22 @@ Utility____:
  */
 package base.fields;
 
-import static base.fields.Fields.FieldType.FIELD_TEXT;
+import static base.fields.Fields.FieldType.FIELD_DATE;
 
-public class FieldText implements Fields {
+public class FieldDate implements Fields {
 
-    private final FieldType TYPE = FIELD_TEXT;
+    private final Fields.FieldType TYPE = FIELD_DATE;
 
     private String field = null;
     private String alias = null;
-    private int length = 0;
 
     /**
      * Constructor complete
      *
-     * @param field field name
-     * @param alias name to show to end user
-     * @param length number of characters lenght
+     * @param field field name 
+     * @param alias alternativa name to show to end user
      */
-    public FieldText(String field, String alias, int length) {
-        this.field = field;
-        this.alias = alias;
-        this.length = length;
-    }
-
-    /**
-     * Constructor base
-     *
-     * @param field field name, in this option the field type is text
-     * @param alias name to show to end user
-     */
-    public FieldText(String field, String alias) {
+    public FieldDate(String field, String alias) {
         this.field = field;
         this.alias = alias;
     }
