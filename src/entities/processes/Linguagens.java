@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package base;
+package entities.processes;
+
+import base.Entity;
 
 /**
  *
  * @author wolfi
  */
-class Linguagens {
-    
+public class Linguagens extends Entity {
+
 }

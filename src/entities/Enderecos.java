@@ -2,7 +2,6 @@ package entities;
 
 import base.Entity;
 
-
 public class Enderecos extends Entity {
 
     public Entity entidade = new Entity("enderecos", "Endereços");

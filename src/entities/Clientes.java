@@ -11,18 +11,16 @@ import base.Entity;
  *
  * @author wolfi
  */
-public class Clientes extends Entity{
+public class Clientes extends Entity {
 
     public Entity entidade = new Entity("clientes", "Clientes");
 
     public Clientes() {
-
-        String fixedValues[] = {"CPF", "CNPJ"};
-
         entidade.addFieldID();
-        entidade.addFieldText("nome", "Nome");
-        entidade.addFixedText("codumento", "Coducmento", fixedValues);
+        entidade.addFieldTextRequired("nome", "Nome");
+        entidade.addDocumentTypeText("documento", "Documento");
         entidade.addFieldDate("datanasc", "Data nascimento");
         entidade.addRelationMultiple(new Enderecos().entidade);
+        entidade.addRelationMultiple(new Contatos().entidade);
     }
 }

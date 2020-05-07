@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
-
-import base.Entity;
+package base.fields;
 
 /**
  *
  * @author wolfi
  */
-public class Linguagens extends Entity {
-
+public class FieldResources {
+    public FieldResources addLimitedValues(String values[]){
+        
+        return this;
+    }
+    
 }
