@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package base.menus;
+package framework.base;
 
 /**
  *
  * @author wolfi
  */
-public class MenuItemSeparator {
-
-    int level = 0;
-
-    public MenuItemSeparator(int level) {
-        this.level = level;
+public class RenderSystemTerminal {
+    public RenderSystemTerminal() {
+        
     }
+    
 }

@@ -1,6 +1,6 @@
-package base.fields;
+package framework.base.fields;
 
-import base.Entity;
+import framework.base.Entity;
 import java.util.ArrayList;
 
 public class Fields {

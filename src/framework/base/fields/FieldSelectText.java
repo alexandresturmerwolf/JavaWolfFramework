@@ -5,23 +5,29 @@ Date_______: 05/04/2020
 Utility____: 
 ================================================================================  
  */
-package base.fields;
+package framework.base.fields;
 
-public class FieldDate extends Fields {
+public class FieldSelectText extends Fields {
 
-    private final Fields.FieldType TYPE = Fields.FieldType.FIELD_DATE;
+    private final Fields.FieldType TYPE = Fields.FieldType.FIELD_SELECT_TEXT;
+    
 
     private String field = null;
     private String alias = null;
+    private String values[] = null;
 
     /**
      * Constructor complete
      *
-     * @param field field name
-     * @param alias alternativa name to show to end user
+     * @param field filedname
+     * @param alias nome to show end user
+     * @param values array with fixed data
      */
-    public FieldDate(String field, String alias) {
+    public FieldSelectText(String field, String alias, String values[]) {
         this.field = field;
         this.alias = alias;
+        this.values = values;
+
     }
+
 }

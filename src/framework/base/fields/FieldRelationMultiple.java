@@ -5,9 +5,9 @@ Date_______: 05/04/2020
 Utility____: 
 ================================================================================  
  */
-package base.fields;
+package framework.base.fields;
 
-import base.Entity;
+import framework.base.Entity;
 
 public class FieldRelationMultiple extends Fields {
 

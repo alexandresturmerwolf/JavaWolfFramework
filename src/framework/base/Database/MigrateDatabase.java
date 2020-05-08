@@ -3,16 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package base.fields;
+package framework.base.Database;
 
 /**
  *
  * @author wolfi
  */
-public class FieldResources {
-    public FieldResources addLimitedValues(String values[]){
+public class MigrateDatabase {
+
+    StringBuffer sb = new StringBuffer();
+
+    public MigrateDatabase() {
         
-        return this;
     }
-    
+
+    public StringBuffer generateInitialSQL() {
+        
+
+        return sb;
+    }
+
 }

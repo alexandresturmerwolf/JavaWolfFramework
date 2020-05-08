@@ -1,6 +1,6 @@
 package entities;
 
-import base.Entity;
+import framework.base.Entity;
 
 public class Enderecos extends Entity {
 

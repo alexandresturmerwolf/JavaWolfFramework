@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package base;
+package framework.base;
 
-import base.fields.*;
+import framework.base.fields.Fields;
 
 /**
  *

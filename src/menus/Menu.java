@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package base;
+package menus;
 
-import base.menus.MenuItemSeparator;
-import base.menus.MenuItemText;
-import base.menus.MenuItemTextParameter;
-import entities.*;
-import processes.Linguagens;
+import entities.Cidades;
+import entities.Fornecedores;
+import entities.Estados;
+import entities.Clientes;
+import framework.base.menus.MenuItemSeparator;
+import framework.base.menus.MenuItemText;
+import framework.base.menus.MenuItemTextParameter;
+import developer.processes.Linguagens;
 import java.util.ArrayList;
 
 /**
