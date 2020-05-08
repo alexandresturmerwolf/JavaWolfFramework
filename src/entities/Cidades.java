@@ -8,6 +8,6 @@ public class Cidades extends Entity {
 
     public Cidades() {
         entidade.addFieldID();
-        entidade.addFieldTextRequired("cidade", "Cidade");
+        entidade.addFieldTextRequired("cidade*", "Cidade");
     }
 }

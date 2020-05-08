@@ -27,7 +27,7 @@ public class Entity extends Fields {
         this.tableName = tableName;
         this.alias = alias;
     }
-
+    
     public Entity getEntity() {
         return this;
     }
