@@ -9,7 +9,7 @@ import base.menus.MenuItemSeparator;
 import base.menus.MenuItemText;
 import base.menus.MenuItemTextParameter;
 import entities.*;
-import entities.processes.Linguagens;
+import processes.Linguagens;
 import java.util.ArrayList;
 
 /**
@@ -22,16 +22,16 @@ public class Menu {
 
     public Menu() {
         menu.add(new MenuItemText(1, "Cadastros", "icoCadastros"));
-       // menu.add(new MenuItemText(2, "Clientes", "icoClientes", Clientes.class));
-        //menu.add(new MenuItemText(2, "Fornecedores", "icoFornecedores", Fornecedores.class));
+        menu.add(new MenuItemText(2, "Clientes", "icoClientes", Clientes.class));
+        menu.add(new MenuItemText(2, "Fornecedores", "icoFornecedores", Fornecedores.class));
         menu.add(new MenuItemSeparator(2));
         menu.add(new MenuItemText(2, "Tabelas de Referências", ""));
-        //menu.add(new MenuItemText(3, "Estados (Unidades Federativas)", "icoEstados", Estados.class));
-        //menu.add(new MenuItemText(3, "Cidades", "icoCidades", Cidades.class));
+        menu.add(new MenuItemText(3, "Estados (Unidades Federativas)", "icoEstados", Estados.class));
+        menu.add(new MenuItemText(3, "Cidades", "icoCidades", Cidades.class));
         menu.add(new MenuItemText(1, "Movimentos", "icoMovimentos"));
         menu.add(new MenuItemText(1, "Linguagens", "icoLinguagens"));
-        //menu.add(new MenuItemTextParameter(2, "Português Brasil", "icoPT-BR", Linguagens.class, "pt-br"));
-       // menu.add(new MenuItemTextParameter(2, "Inglês", "icoEN", Linguagens.class, "en"));
-        //menu.add(new MenuItemTextParameter(2, "Espanhol", "icoES", Linguagens.class, "es"));
+        menu.add(new MenuItemTextParameter(2, "Português Brasil", "icoPT-BR", Linguagens.class, "pt-br"));
+        menu.add(new MenuItemTextParameter(2, "Inglês", "icoEN", Linguagens.class, "en"));
+        menu.add(new MenuItemTextParameter(2, "Espanhol", "icoES", Linguagens.class, "es"));
     }
 }

@@ -5,7 +5,8 @@
  */
 package framewolf;
 
-import base.Menu;
+//import base.Menu;
+
 
 /**
  *
@@ -17,9 +18,11 @@ public class FrameWolf {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        while(true){
-            Menu m = new Menu();
-        }
+        
+        System.out.println("teste123");
+        //while(true){
+        //    Menu m = new Menu();
+        //}
     }
     
 }
