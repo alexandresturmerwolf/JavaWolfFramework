@@ -18,8 +18,11 @@ public class MigrateDatabase {
     }
 
     public StringBuffer generateInitialSQL() {
+        ConnDB connDB = new ConnDB();
+        if(connDB.isConnected()){
+            
+        }
         
-
         return sb;
     }
 

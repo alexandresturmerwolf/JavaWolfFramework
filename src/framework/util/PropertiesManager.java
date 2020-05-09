@@ -1,27 +1,32 @@
 package framework.util;
 
+import framework.base.Constants;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-/**
- *
- * @author wolfi
- */
 public class PropertiesManager {
 
     public Properties properties = null;
 
     public PropertiesManager(String fileName) {
         properties = new Properties();
+        String filePath = Constants.BASE_PATH + fileName;
         try {
-            FileInputStream file = new FileInputStream(fileName);
+            ExceptionAnaliser.info("Property file: " + filePath);
+            FileInputStream file = new FileInputStream(filePath);
             properties.load(file);
         } catch (Exception e) {
-            ExceptionAnaliser.ExceptionCenter(e);
+            ExceptionAnaliser.errorException(e);
         }
     }
-    
-    public void close(){
+
+    public String getProperty(String property) {
+        String ret = properties.getProperty(property);
+        ExceptionAnaliser.info("Property read: " + ret);
+        return ret;
+    }
+
+    public void close() {
         properties.clear();
     }
 }
