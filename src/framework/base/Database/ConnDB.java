@@ -16,9 +16,10 @@ import java.sql.*;
 public class ConnDB {
     
     public static ConnDB connDB = null;
-    public Connection conn = null;
+    public Connection conn;
     
     public ConnDB() {
+        this.conn = null;
         connDB = this;
         connect();
     }
@@ -29,14 +30,15 @@ public class ConnDB {
         String databaseLocation = prop.getProperty("DATABASE_LOCATION");
         String databaseUser = prop.getProperty("DATABASE_USER");
         String databasePassword = prop.getProperty("DATABASE_PASSWORD");
+        prop.close();
         
-        try {
-            Class.forName(databaseDriver).newInstance();            
-            try {
+        try {            
+            Class.forName(databaseDriver).newInstance();                        
+            try {                
                 conn = DriverManager.getConnection(databaseLocation, databaseUser, databasePassword);
             } catch (Exception e) {
                 ExceptionAnaliser.errorException(e, "not possible connect to database " + databaseLocation + "(possible location, user or password)");
-            }
+            } 
         } catch (Exception e) {
             ExceptionAnaliser.errorException(e, "registering driver class " + databaseDriver);
             ExceptionAnaliser.errorException("Modules path: " + (System.getProperty("java.class.path")));

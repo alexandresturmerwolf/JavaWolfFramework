@@ -25,6 +25,7 @@ public class Menu {
 
     public Menu() {
         menu.add(new MenuItemText(1, "Cadastros", "icoCadastros"));
+        /*
         menu.add(new MenuItemText(2, "Clientes", "icoClientes", Clientes.class));
         menu.add(new MenuItemText(2, "Fornecedores", "icoFornecedores", Fornecedores.class));
         menu.add(new MenuItemSeparator(2));
@@ -36,5 +37,6 @@ public class Menu {
         menu.add(new MenuItemTextParameter(2, "Português Brasil", "icoPT-BR", Languages.class, "pt-br"));
         menu.add(new MenuItemTextParameter(2, "Inglês", "icoEN", Languages.class, "en"));
         menu.add(new MenuItemTextParameter(2, "Espanhol", "icoES", Languages.class, "es"));
+*/
     }
 }
