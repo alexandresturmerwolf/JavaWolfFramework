@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package developer.processes;
+package framework.base;
 
 import framework.base.Entity;
 
@@ -11,6 +11,6 @@ import framework.base.Entity;
  *
  * @author wolfi
  */
-public class Linguagens extends Entity {
+public class Languages extends Entity {
 
 }

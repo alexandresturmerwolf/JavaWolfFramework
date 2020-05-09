@@ -12,7 +12,7 @@ import entities.Clientes;
 import framework.base.menus.MenuItemSeparator;
 import framework.base.menus.MenuItemText;
 import framework.base.menus.MenuItemTextParameter;
-import developer.processes.Linguagens;
+import framework.base.Languages;
 import java.util.ArrayList;
 
 /**
@@ -33,8 +33,8 @@ public class Menu {
         menu.add(new MenuItemText(3, "Cidades", "icoCidades", Cidades.class));
         menu.add(new MenuItemText(1, "Movimentos", "icoMovimentos"));
         menu.add(new MenuItemText(1, "Linguagens", "icoLinguagens"));
-        menu.add(new MenuItemTextParameter(2, "Português Brasil", "icoPT-BR", Linguagens.class, "pt-br"));
-        menu.add(new MenuItemTextParameter(2, "Inglês", "icoEN", Linguagens.class, "en"));
-        menu.add(new MenuItemTextParameter(2, "Espanhol", "icoES", Linguagens.class, "es"));
+        menu.add(new MenuItemTextParameter(2, "Português Brasil", "icoPT-BR", Languages.class, "pt-br"));
+        menu.add(new MenuItemTextParameter(2, "Inglês", "icoEN", Languages.class, "en"));
+        menu.add(new MenuItemTextParameter(2, "Espanhol", "icoES", Languages.class, "es"));
     }
 }
