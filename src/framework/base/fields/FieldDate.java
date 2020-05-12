@@ -7,9 +7,9 @@ Utility____:
  */
 package framework.base.fields;
 
-public class FieldDate extends Fields {
+public class FieldDate extends CFields {
 
-    private final Fields.FieldType TYPE = Fields.FieldType.FIELD_DATE;
+    public final CFields.FieldType TYPE = CFields.FieldType.FIELD_DATE;
 
     private String field = null;
     private String alias = null;
@@ -23,5 +23,12 @@ public class FieldDate extends Fields {
     public FieldDate(String field, String alias) {
         this.field = field;
         this.alias = alias;
+    }
+
+    @Override
+    public String getSQL() {
+        String sql = field + " DATE";
+
+        return sql;
     }
 }

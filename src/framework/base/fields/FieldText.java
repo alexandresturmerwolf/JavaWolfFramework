@@ -7,9 +7,9 @@ Utility____:
  */
 package framework.base.fields;
 
-public class FieldText extends Fields {
+public class FieldText extends CFields {
 
-    private final FieldType TYPE = Fields.FieldType.FIELD_TEXT;
+    public final FieldType TYPE = CFields.FieldType.FIELD_TEXT;
 
     private String field = null;
     private String alias = null;
@@ -37,6 +37,17 @@ public class FieldText extends Fields {
     public FieldText(String field, String alias) {
         this.field = field;
         this.alias = alias;
+    }
+
+    @Override
+    public String getSQL() {
+        String sql = "";
+        if (length > 0) {
+            sql = field + " VARCHAR(" + length + ")";
+        } else {
+            sql = field + " TEXT";
+        }
+        return sql;
     }
 
 }

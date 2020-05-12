@@ -13,5 +13,6 @@ package framework.base;
 public class Constants {
     public static final String BASE_PATH = "./src/";
     public static final boolean DEBUG_MODE_INFO = true;
+    public static final String BASE_PATH_ENTITIES = System.getProperty("user.dir") + Constants.BASE_PATH + "/entities";
     
 }

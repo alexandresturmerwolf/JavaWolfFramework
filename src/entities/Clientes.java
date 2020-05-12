@@ -13,14 +13,19 @@ import framework.base.Entity;
  */
 public class Clientes extends Entity {
 
-    public Entity entidade = new Entity("clientes", "Clientes");
-
     public Clientes() {
-        entidade.addFieldID();
-        entidade.addFieldTextRequired("nome", "Nome");
-        entidade.addDocumentTypeText("documento", "Documento");
-        entidade.addFieldDate("datanasc", "Data nascimento");
-        entidade.addRelationMultiple(new Enderecos().entidade);
-        entidade.addRelationMultiple(new Contatos().entidade);
+        super("clientes", "Clientes");
+    }
+
+    @Override
+    public Entity addCallBackFields(Entity entity) {
+        entity.addFieldID();
+        entity.addFieldText("nome*", "Nome");
+        entity.addDocumentTypeText("documento", "Documento");
+        entity.addFieldDate("datanasc", "Data nascimento");
+        entity.addRelationMultiple(new Enderecos());
+        entity.addRelationMultiple(new Contatos());
+
+        return entity;
     }
 }

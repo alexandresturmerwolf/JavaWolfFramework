@@ -1,35 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package framework.base;
 
-import framework.base.fields.Fields;
+import framework.base.fields.CFields;
 
-/**
- *
- * @author wolfi
- */
-public class Entity extends Fields {
-
-    public final int DOCUMENT_CPF = 0;
-    public final int DOCUMENT_CNPJ = 1;
+public abstract class Entity extends CFields {
 
     private String tableName = null;
-    private String alias = null;
+    private String tableAlias = null;
+    private Entity callEntity = null;
 
-    public Entity() {
-
-    }
-
-    public Entity(String tableName, String alias) {
+    public Entity(String tableName, String tableAlias) {
         this.tableName = tableName;
-        this.alias = alias;
+        this.tableAlias = tableAlias;
+        callEntity = addCallBackFields(this);
     }
-    
-    public Entity getEntity() {
-        return this;
+
+    public String getTableName() {
+        return tableName;
+    }
+
+    public String getTableAlias() {
+        return tableAlias;
+    }
+
+    public abstract Entity addCallBackFields(Entity entity);
+
+    @Override
+    public String getSQL() {
+        String sql = "CREATE TABLE " + tableName;
+        return sql;
     }
 
 }

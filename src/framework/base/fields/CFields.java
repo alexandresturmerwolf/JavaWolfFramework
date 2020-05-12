@@ -3,19 +3,17 @@ package framework.base.fields;
 import framework.base.Entity;
 import java.util.ArrayList;
 
-public class Fields {
+abstract public class CFields {
 
-    private ArrayList fields = new ArrayList();
+    private ArrayList<CFields> fields = new ArrayList();
+
+    public abstract String getSQL();
 
     public enum FieldType {
         FIELD_TEXT, FIELD_INTEGER, FIELD_NUMBER, FIELD_DATE, FIELD_MEMO, FIELD_RELATION_MULTIPLE, FIELD_RELATION_SIMPLE, FIELD_SELECT_TEXT, FIELD_ID, FIELD_MASK_TEXT;
     }
 
     public void addFieldText(String field, String alias) {
-        fields.add(new FieldText(field, alias));
-    }
-
-    public void addFieldTextRequired(String field, String alias) {
         fields.add(new FieldText(field, alias));
     }
 
@@ -45,6 +43,10 @@ public class Fields {
 
     public void addFieldID() {
         fields.add(new FieldID());
+    }
+
+    public ArrayList getFields() {
+        return fields;
     }
 
 }

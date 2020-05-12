@@ -7,12 +7,19 @@ Utility____:
  */
 package framework.base.fields;
 
-public class FieldID extends Fields {
+public class FieldID extends CFields{
 
-    private final Fields.FieldType TYPE = Fields.FieldType.FIELD_ID;
+    private final CFields.FieldType TYPE = CFields.FieldType.FIELD_ID;
 
     public FieldID() {
 
+    }
+
+    @Override
+    public String getSQL() {
+        //@TODO: automatic auto increment for diferent databases
+       String sql = "id SERIAL PRIMARY KEY NOT NULL";
+       return sql;
     }
 
 }

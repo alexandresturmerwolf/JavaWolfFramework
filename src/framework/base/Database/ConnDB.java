@@ -41,7 +41,7 @@ public class ConnDB {
             } 
         } catch (Exception e) {
             ExceptionAnaliser.errorException(e, "registering driver class " + databaseDriver);
-            ExceptionAnaliser.errorException("Modules path: " + (System.getProperty("java.class.path")));
+            ExceptionAnaliser.error("Modules path: " + (System.getProperty("java.class.path")));
         }
     }
     

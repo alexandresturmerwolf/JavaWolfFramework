@@ -9,19 +9,19 @@ package framework.base.fields;
 
 import framework.base.Entity;
 
-public class FieldRelationSimple extends Fields {
+public class FieldRelationSimple extends CFields {
 
-    private final Fields.FieldType TYPE = Fields.FieldType.FIELD_RELATION_SIMPLE;
+    public final CFields.FieldType TYPE = CFields.FieldType.FIELD_RELATION_SIMPLE;
     private Entity entity = null;
 
-    /**
-     * a
-     * Constructor complete
-     *
-     * @param entity entity of foreign key
-     */
     public FieldRelationSimple(Entity entity) {
         this.entity = entity;
+    }
+
+    @Override
+    public String getSQL() {
+        String sql = "rel_" + entity.getTableName() + " INTEGER NOT NULL";
+        return sql;
     }
 
 }

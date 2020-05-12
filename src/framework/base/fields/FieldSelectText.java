@@ -7,10 +7,9 @@ Utility____:
  */
 package framework.base.fields;
 
-public class FieldSelectText extends Fields {
+public class FieldSelectText extends CFields {
 
-    private final Fields.FieldType TYPE = Fields.FieldType.FIELD_SELECT_TEXT;
-    
+    public final CFields.FieldType TYPE = CFields.FieldType.FIELD_SELECT_TEXT;
 
     private String field = null;
     private String alias = null;
@@ -28,6 +27,13 @@ public class FieldSelectText extends Fields {
         this.alias = alias;
         this.values = values;
 
+    }
+
+    @Override
+    public String getSQL() {
+        String sql = field + " TEXT";
+
+        return sql;
     }
 
 }

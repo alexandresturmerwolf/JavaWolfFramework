@@ -9,9 +9,9 @@ package framework.base.fields;
  *
  * @author wolfi
  */
-public class FieldMaskText {
+public class FieldMaskText extends CFields {
 
-    private final Fields.FieldType TYPE = Fields.FieldType.FIELD_MASK_TEXT;
+    public final CFields.FieldType TYPE = CFields.FieldType.FIELD_MASK_TEXT;
 
     private String field = null;
     private String alias = null;
@@ -29,5 +29,11 @@ public class FieldMaskText {
         this.alias = alias;
         this.mask = mask;
 
+    }
+
+    @Override
+    public String getSQL() {
+        String sql = field +" TEXT" ;
+        return sql;
     }
 }

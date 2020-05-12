@@ -1,15 +1,18 @@
 package entities;
 
-
-
 import framework.base.Entity;
 
 public class Cidades extends Entity {
 
-    public Entity entidade = new Entity("cidades", "Cidades");
-
     public Cidades() {
-        entidade.addFieldID();
-        entidade.addFieldTextRequired("cidade*", "Cidade");
+        super("cidades", "Cidades");
+    }
+
+    @Override
+    public Entity addCallBackFields(Entity entity) {
+        entity.addFieldID();
+        entity.addFieldText("cidade*", "Cidade");
+        
+        return entity;
     }
 }

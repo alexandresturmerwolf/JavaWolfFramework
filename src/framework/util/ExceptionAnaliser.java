@@ -17,8 +17,8 @@ public class ExceptionAnaliser {
         error.printStackTrace();
     }
 
-    public static void errorException(String message) {
-        System.out.println("Exra info : " + message);        
+    public static void error(String message) {
+        System.out.println("Exra info: " + message);        
     }
     
     public static void errorException(Exception error, String message) {

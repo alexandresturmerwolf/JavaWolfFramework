@@ -5,10 +5,26 @@
  */
 package entities;
 
+import framework.base.Entity;
+
 /**
  *
  * @author wolfi
  */
-public class Fornecedores {
-    
+public class Fornecedores extends Entity {
+
+    public Fornecedores() {
+        super("fornecedores", "Fornecedores");
+    }
+
+    @Override
+    public Entity addCallBackFields(Entity entity) {
+        entity.addFieldID();
+        entity.addFieldText("nome*", "Nome");
+        entity.addDocumentTypeText("documento", "Documento");
+        entity.addRelationMultiple(new Enderecos());
+        entity.addRelationMultiple(new Contatos());
+
+        return entity;
+    }
 }

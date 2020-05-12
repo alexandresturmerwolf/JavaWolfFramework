@@ -9,9 +9,9 @@ package framework.base.fields;
 
 import framework.base.Entity;
 
-public class FieldRelationMultiple extends Fields {
+public class FieldRelationMultiple extends CFields {
 
-    private final Fields.FieldType TYPE = FieldType.FIELD_RELATION_MULTIPLE;
+    public final CFields.FieldType TYPE = FieldType.FIELD_RELATION_MULTIPLE;
     private Entity entity = null;
 
     /**
@@ -22,6 +22,13 @@ public class FieldRelationMultiple extends Fields {
      */
     public FieldRelationMultiple(Entity entity) {
         this.entity = entity;
+    }
+    
+    @Override
+    public String getSQL() {
+        
+        String sql = "rel_m_" + entity.getTableName() + " INTEGER NOT NULL";
+        return sql;
     }
 
 }
