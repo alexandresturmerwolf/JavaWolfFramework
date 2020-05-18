@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class MigrateDatabase {
 
     String sql = "";
+    String extraTablesReferences = "";
 
     public MigrateDatabase() {
 
@@ -41,6 +42,7 @@ public class MigrateDatabase {
                         for (int i = 0; i < fields.size(); i++) {
                             CFields field = (CFields) fields.get(i);
                             sql += analiseEntrance(field.getSQL()) + ", ";
+                            if(field.)
                         }
                         sql = sql.substring(0, sql.length() - 2) + ");\n";
                     } catch (Exception e) {
@@ -63,4 +65,5 @@ public class MigrateDatabase {
         }
         return s;
     }
+       
 }

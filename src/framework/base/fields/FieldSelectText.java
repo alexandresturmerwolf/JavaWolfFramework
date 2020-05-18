@@ -36,4 +36,8 @@ public class FieldSelectText extends CFields {
         return sql;
     }
 
+    @Override
+    public FieldType getFieldType() {
+        return TYPE;
+    }
 }

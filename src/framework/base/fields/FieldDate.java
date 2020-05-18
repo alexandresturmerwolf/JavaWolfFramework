@@ -28,7 +28,11 @@ public class FieldDate extends CFields {
     @Override
     public String getSQL() {
         String sql = field + " DATE";
-
         return sql;
+    }
+
+    @Override
+    public FieldType getFieldType() {
+        return TYPE;
     }
 }

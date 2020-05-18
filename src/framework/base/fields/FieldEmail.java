@@ -7,33 +7,32 @@ Utility____:
  */
 package framework.base.fields;
 
-import framework.base.Entity;
+public class FieldEmail extends CFields {
 
-public class FieldRelationMultiple extends CFields {
+    public final CFields.FieldType TYPE = CFields.FieldType.FIELD_EMAIL;
 
-    public final CFields.FieldType TYPE = FieldType.FIELD_RELATION_MULTIPLE;
-    private Entity entity = null;
+    private String field = null;
+    private String alias = null;
 
     /**
-     * a
      * Constructor complete
      *
-     * @param entity entity of foreign key
+     * @param field field name
+     * @param alias alternativa name to show to end user
      */
-    public FieldRelationMultiple(Entity entity) {
-        this.entity = entity;
+    public FieldEmail(String field, String alias) {
+        this.field = field;
+        this.alias = alias;
     }
 
     @Override
     public String getSQL() {
-
-        String sql = "rel_m_" + entity.getTableName() + " INTEGER NOT NULL";
+        String sql = field + " TEXT";
         return sql;
     }
-    
+
     @Override
     public FieldType getFieldType() {
         return TYPE;
     }
-
 }

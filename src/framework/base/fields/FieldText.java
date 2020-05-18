@@ -50,4 +50,9 @@ public class FieldText extends CFields {
         return sql;
     }
 
+    @Override
+    public FieldType getFieldType() {
+        return TYPE;
+    }
+
 }

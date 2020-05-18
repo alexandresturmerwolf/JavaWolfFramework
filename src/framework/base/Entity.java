@@ -4,6 +4,8 @@ import framework.base.fields.CFields;
 
 public abstract class Entity extends CFields {
 
+    public final CFields.FieldType TYPE = CFields.FieldType.FIELD_NONE;
+
     private String tableName = null;
     private String tableAlias = null;
     private Entity callEntity = null;
@@ -30,4 +32,8 @@ public abstract class Entity extends CFields {
         return sql;
     }
 
+    @Override
+    public FieldType getFieldType() {
+        return TYPE;
+    }
 }

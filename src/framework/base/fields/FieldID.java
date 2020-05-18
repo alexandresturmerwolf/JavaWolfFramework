@@ -21,5 +21,10 @@ public class FieldID extends CFields{
        String sql = "id SERIAL PRIMARY KEY NOT NULL";
        return sql;
     }
+    
+    @Override
+    public FieldType getFieldType() {
+        return TYPE;
+    }
 
 }

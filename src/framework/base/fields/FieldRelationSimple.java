@@ -23,5 +23,10 @@ public class FieldRelationSimple extends CFields {
         String sql = "rel_" + entity.getTableName() + " INTEGER NOT NULL";
         return sql;
     }
+    
+    @Override
+    public FieldType getFieldType() {
+        return TYPE;
+    }
 
 }

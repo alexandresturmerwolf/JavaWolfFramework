@@ -36,4 +36,9 @@ public class FieldMaskText extends CFields {
         String sql = field +" TEXT" ;
         return sql;
     }
+    
+    @Override
+    public FieldType getFieldType() {
+        return TYPE;
+    }
 }

@@ -9,8 +9,10 @@ abstract public class CFields {
 
     public abstract String getSQL();
 
+    public abstract FieldType getFieldType();
+
     public enum FieldType {
-        FIELD_TEXT, FIELD_INTEGER, FIELD_NUMBER, FIELD_DATE, FIELD_MEMO, FIELD_RELATION_MULTIPLE, FIELD_RELATION_SIMPLE, FIELD_SELECT_TEXT, FIELD_ID, FIELD_MASK_TEXT;
+        FIELD_TEXT, FIELD_INTEGER, FIELD_NUMBER, FIELD_DATE, FIELD_MEMO, FIELD_RELATION_MULTIPLE, FIELD_RELATION_SIMPLE, FIELD_SELECT_TEXT, FIELD_ID, FIELD_MASK_TEXT, FIELD_EMAIL, FIELD_NONE;
     }
 
     public void addFieldText(String field, String alias) {
@@ -18,6 +20,10 @@ abstract public class CFields {
     }
 
     public void addFieldDate(String field, String alias) {
+        fields.add(new FieldDate(field, alias));
+    }
+
+    public void addFieldEmail(String field, String alias) {
         fields.add(new FieldDate(field, alias));
     }
 
