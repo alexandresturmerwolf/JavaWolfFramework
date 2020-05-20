@@ -9,11 +9,6 @@ package framework.base.menus;
  *
  * @author wolfi
  */
-public class MenuItemSeparator extends MenuType{
-
-    int level = 0;
-
-    public MenuItemSeparator(int level) {
-        this.level = level;
-    }
+public class MenuType {
+    
 }

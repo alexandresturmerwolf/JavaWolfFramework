@@ -11,7 +11,7 @@ import framework.base.Entity;
  *
  * @author wolfi
  */
-public class MenuItemText {
+public class MenuItemText extends MenuType{
 
     private int level = 0;
     private String iconName = null;
