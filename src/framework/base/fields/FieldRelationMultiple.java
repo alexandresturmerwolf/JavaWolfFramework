@@ -26,14 +26,16 @@ public class FieldRelationMultiple extends CFields {
 
     @Override
     public String getSQL() {
-
-        String sql = "rel_m_" + entity.getTableName() + " INTEGER NOT NULL";
+        String sql = "rel_" + entity.getTableName() + " INTEGER NOT NULL";
         return sql;
     }
-    
+
     @Override
     public FieldType getFieldType() {
         return TYPE;
     }
 
+    public Entity getEntityRelated() {
+        return entity;
+    }
 }

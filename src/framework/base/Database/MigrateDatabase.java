@@ -8,6 +8,7 @@ package framework.base.Database;
 import framework.base.Constants;
 import framework.base.Entity;
 import framework.base.fields.CFields;
+import framework.base.fields.FieldID;
 import framework.util.ExceptionAnaliser;
 import java.io.File;
 import java.util.ArrayList;
@@ -19,7 +20,8 @@ import java.util.ArrayList;
 public class MigrateDatabase {
 
     String sql = "";
-    String extraTablesReferences = "";
+    String sqlExtras = "";
+    String sqlConstraints = "";
 
     public MigrateDatabase() {
 
@@ -42,7 +44,22 @@ public class MigrateDatabase {
                         for (int i = 0; i < fields.size(); i++) {
                             CFields field = (CFields) fields.get(i);
                             sql += analiseEntrance(field.getSQL()) + ", ";
-                            if(field.)
+
+                            if (field.getFieldType() == CFields.FieldType.FIELD_RELATION_MULTIPLE) {
+                                String tableDestiny = field.getSQL().substring(0, field.getSQL().indexOf(" "));
+                                sqlExtras += objEntity.getSQL() + "_" + tableDestiny;
+                                sqlExtras += "(" + new FieldID().getSQL() + ", id_";
+                                sqlExtras += objEntity.getTableName() + " " + ConstantsSQL.SQL_NOT_NULL + ", ";
+                                sqlExtras += "id" + tableDestiny.substring(tableDestiny.lastIndexOf("_")) + " " + ConstantsSQL.SQL_NOT_NULL;
+                                sqlExtras += ");\n";
+
+                                //sqlConstraints += String.format(ConstantsSQL.SQL_ADD_CONSTRAINT, args);
+                                
+                                //"ALTER TABLE %s ADD CONSTRAINT %s FOREIGN KEY(%s) REFERENCES %s (%s)";
+
+                            } else if (field.getFieldType() == CFields.FieldType.FIELD_RELATION_SIMPLE) {
+                                sqlConstraints += "";
+                            }
                         }
                         sql = sql.substring(0, sql.length() - 2) + ");\n";
                     } catch (Exception e) {
@@ -55,15 +72,15 @@ public class MigrateDatabase {
         } else {
             ExceptionAnaliser.error("database not connected");
         }
-        return sql;
+        return sql + sqlExtras + sqlConstraints;
     }
 
     private String analiseEntrance(String s) {
         if (s.indexOf("*") > 0) {
             s = s.replace("*", "");
-            s += " UNIQUE";
+            s += " " + ConstantsSQL.SQL_UNIQUE;
         }
         return s;
     }
-       
+
 }
