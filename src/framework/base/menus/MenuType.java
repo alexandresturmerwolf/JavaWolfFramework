@@ -9,6 +9,15 @@ package framework.base.menus;
  *
  * @author wolfi
  */
-public class MenuType {
+public abstract class MenuType {
+
+    public abstract int getLevel();
+
+    public abstract String getDescription();
+
+    public abstract String getIconName();
     
+    public String getUrl() {
+        return "#";
+    }
 }

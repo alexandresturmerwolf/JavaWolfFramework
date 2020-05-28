@@ -1,13 +1,18 @@
 package framewolf;
 
-import framework.base.Database.MigrateDatabase;
+import menus.Menu;
+import renders.RenderWebCode;
 
 public class FrameWolf {
 
     public static void main(String[] args) {
 
-        MigrateDatabase migrate = new MigrateDatabase();
-        System.out.println(migrate.generateInitialSQL().toString());
+        //MigrateDatabase migrate = new MigrateDatabase();
+        //System.out.println(migrate.generateInitialSQL().toString());
+        Menu m = new Menu();
+        RenderWebCode r = new RenderWebCode(m);
+
+        System.out.println(r.generateMenu());
 
     }
 }

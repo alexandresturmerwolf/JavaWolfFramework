@@ -42,4 +42,18 @@ public class MenuItemText extends MenuType{
         this.iconName = iconName;
     }
 
+    @Override
+    public int getLevel() {
+        return level;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String getIconName() {
+        return iconName;
+    }
 }

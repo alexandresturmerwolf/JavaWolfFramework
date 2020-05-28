@@ -22,9 +22,13 @@ public abstract class Menus {
     }
 
     public abstract Menus addCallBackFields(Menus menus);
-    
-    public void add(MenuType m){
-        
+
+    public void add(MenuType m) {
+        menuList.add(m);
+    }
+
+    public ArrayList getMenus() {
+        return menuList;
     }
 
 }

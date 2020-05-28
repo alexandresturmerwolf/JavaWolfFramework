@@ -14,17 +14,12 @@ import framework.base.menus.MenuItemText;
 import framework.base.menus.MenuItemTextParameter;
 import framework.base.Languages;
 import framework.base.Menus;
-import java.util.ArrayList;
 
 /**
  *
  * @author wolfi
  */
 public class Menu extends Menus {
-
-    public Menu() {
-
-    }
 
     @Override
     public Menus addCallBackFields(Menus menus) {

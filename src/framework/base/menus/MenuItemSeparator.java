@@ -16,4 +16,19 @@ public class MenuItemSeparator extends MenuType{
     public MenuItemSeparator(int level) {
         this.level = level;
     }
+
+    @Override
+    public int getLevel() {
+        return level;
+    }
+
+    @Override
+    public String getDescription() {
+        return "-";
+    }
+    
+    @Override
+    public String getIconName() {
+        return "separator";
+    }
 }
